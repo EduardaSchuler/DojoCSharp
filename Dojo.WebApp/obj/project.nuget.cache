@@ -1,0 +1,15 @@
+{
+  "version": 2,
+  "dgSpecHash": "N71UhAxLjg9DVYh09onTb55yL0ZUCOqMtLyS+lb6gZl97rCUxfA+sFKKCEmsA8CU8ZYSZN2BbHV+FK/dpRsiew==",
+  "success": true,
+  "projectFilePath": "C:\\Users\\mariaes.SOLAR\\projetos\\dojo\\Dojo.WebApp\\Dojo.WebApp.csproj",
+  "expectedPackageFiles": [
+    "C:\\Users\\mariaes.SOLAR\\.nuget\\packages\\microsoft.extensions.apidescription.server\\6.0.5\\microsoft.extensions.apidescription.server.6.0.5.nupkg.sha512",
+    "C:\\Users\\mariaes.SOLAR\\.nuget\\packages\\microsoft.openapi\\1.2.3\\microsoft.openapi.1.2.3.nupkg.sha512",
+    "C:\\Users\\mariaes.SOLAR\\.nuget\\packages\\swashbuckle.aspnetcore\\6.5.0\\swashbuckle.aspnetcore.6.5.0.nupkg.sha512",
+    "C:\\Users\\mariaes.SOLAR\\.nuget\\packages\\swashbuckle.aspnetcore.swagger\\6.5.0\\swashbuckle.aspnetcore.swagger.6.5.0.nupkg.sha512",
+    "C:\\Users\\mariaes.SOLAR\\.nuget\\packages\\swashbuckle.aspnetcore.swaggergen\\6.5.0\\swashbuckle.aspnetcore.swaggergen.6.5.0.nupkg.sha512",
+    "C:\\Users\\mariaes.SOLAR\\.nuget\\packages\\swashbuckle.aspnetcore.swaggerui\\6.5.0\\swashbuckle.aspnetcore.swaggerui.6.5.0.nupkg.sha512"
+  ],
+  "logs": []
+}
