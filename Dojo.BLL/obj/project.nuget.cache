@@ -1,12 +1,8 @@
 {
   "version": 2,
-  "dgSpecHash": "75ghzj5zKrc+sA7Rx/66qNH0uUgO+AwkteO+KolIIzmKCZd+93G9iJLb3H/wegiHGI0/72hlgYOzTEToPdlHWg==",
+  "dgSpecHash": "L6NYYs0LlNndWz0iceSjaMRZtMN0A4GRtpFiiyZphXehv1L90zzj/8f4pBTfTkXMxvXrBUJNraiH/FQqVlvkkA==",
   "success": true,
-  "projectFilePath": "C:\\Users\\dudas\\projetos\\DojoCSharp\\Dojo.BLL\\Dojo.BLL.csproj",
-  "expectedPackageFiles": [
-    "C:\\Users\\dudas\\.nuget\\packages\\microsoft.netcore.app.ref\\6.0.25\\microsoft.netcore.app.ref.6.0.25.nupkg.sha512",
-    "C:\\Users\\dudas\\.nuget\\packages\\microsoft.windowsdesktop.app.ref\\6.0.25\\microsoft.windowsdesktop.app.ref.6.0.25.nupkg.sha512",
-    "C:\\Users\\dudas\\.nuget\\packages\\microsoft.aspnetcore.app.ref\\6.0.25\\microsoft.aspnetcore.app.ref.6.0.25.nupkg.sha512"
-  ],
+  "projectFilePath": "C:\\Users\\mariaes.SOLAR\\projetos\\dojo\\Dojo.BLL\\Dojo.BLL.csproj",
+  "expectedPackageFiles": [],
   "logs": []
 }
