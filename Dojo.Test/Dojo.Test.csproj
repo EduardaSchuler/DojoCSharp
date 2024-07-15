@@ -24,6 +24,7 @@
 
   <ItemGroup>
     <ProjectReference Include="..\Dojo.DAO\Dojo.DAO.csproj" />
+    <ProjectReference Include="..\Dojo.BLL\Dojo.BLL.csproj" />
   </ItemGroup>
 
 </Project>
