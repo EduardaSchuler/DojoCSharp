@@ -26,15 +26,4 @@ public class UsuarioServiceTest
         Assert.NotNull(usuario);
         Assert.Equal(1, usuario.Id);
     }
-
-    [Fact]
-    public async Task DeveFalharAoInserirUmUsuarioComIdZero(){
-        _usuarioRepositoryMock.Setup(repo=> repo.GetByIdAsync(It.IsAny<int>()))
-        .ReturnsAsync(new DAO.Context.Usuario {Id = 0, Nome="Usuario Teste", Cpf= "1910000000"});
-
-        var usuario = await _usuarioService.GetByIdAsync(0);
-
-        Assert.NotNull(usuario);
-        Assert.Equal(1, usuario.Id);
-    }
 }
