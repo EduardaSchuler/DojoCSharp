@@ -1,30 +1,43 @@
 
+using Microsoft.EntityFrameworkCore;
+
 namespace Dojo.DAO.BaseRepository;
 
 public class BaseRepository<TEntity> : IBaseRepository<TEntity> where TEntity : class
 {
-    public Task AddAsync(TEntity entity)
+    protected readonly DbContext _context; // objeto de conexão do banco de dados e a aplicação
+
+    public BaseRepository(DbContext context)
     {
-        throw new NotImplementedException();
+        _context = context;
     }
 
-    public Task DeleteAsync(int id)
+    //metodos assincronos 
+
+    public async Task AddAsync(TEntity entity) 
     {
-        throw new NotImplementedException();
+        await _context.Set<TEntity>().AddAsync(entity);
+        await _context.SaveChangesAsync(); // para metodos de metodos que vao modificar algo no banco deve-se usar este metodo sendo Async ou não
     }
 
-    public Task<IEnumerable<TEntity>> GetAllAsync()
+    public async Task DeleteAsync(int id) 
     {
-        throw new NotImplementedException();
+        var entity = await GetByIdAsync(id);
+        _context.Set<TEntity>().Remove(entity);
+        await _context.SaveChangesAsync();
     }
 
-    public Task<TEntity> GetByIdAsync(int id)
+    public async Task UpdateAsync(TEntity entity)
     {
-        throw new NotImplementedException();
+        _context.Set<TEntity>().Update(entity);
+        await _context.SaveChangesAsync();
     }
 
-    public Task UpdateAsync(TEntity entity)
-    {
-        throw new NotImplementedException();
-    }
+    public async Task<IEnumerable<TEntity>> GetAllAsync() 
+    => await _context.Set<TEntity>().ToListAsync();
+
+    //TO DO: Acertar o null reference nesse metodo
+    public async Task<TEntity> GetByIdAsync(int id)
+    => await _context.Set<TEntity>().FindAsync(id);
+
 }
