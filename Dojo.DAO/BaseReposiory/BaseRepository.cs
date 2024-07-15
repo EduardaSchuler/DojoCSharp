@@ -13,7 +13,7 @@ public class BaseRepository<TEntity> : IBaseRepository<TEntity> where TEntity : 
         throw new NotImplementedException();
     }
 
-    public Task<IEnumerable<TEntity>> getAllAsync()
+    public Task<IEnumerable<TEntity>> GetAllAsync()
     {
         throw new NotImplementedException();
     }

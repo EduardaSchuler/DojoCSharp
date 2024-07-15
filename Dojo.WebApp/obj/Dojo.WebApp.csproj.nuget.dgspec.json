@@ -1,20 +1,20 @@
 {
   "format": 1,
   "restore": {
-    "C:\\Users\\mariaes.SOLAR\\projetos\\dojo\\Dojo.WebApp\\Dojo.WebApp.csproj": {}
+    "C:\\Users\\dudas\\projetos\\DojoCSharp\\Dojo.WebApp\\Dojo.WebApp.csproj": {}
   },
   "projects": {
-    "C:\\Users\\mariaes.SOLAR\\projetos\\dojo\\Dojo.WebApp\\Dojo.WebApp.csproj": {
+    "C:\\Users\\dudas\\projetos\\DojoCSharp\\Dojo.WebApp\\Dojo.WebApp.csproj": {
       "version": "1.0.0",
       "restore": {
-        "projectUniqueName": "C:\\Users\\mariaes.SOLAR\\projetos\\dojo\\Dojo.WebApp\\Dojo.WebApp.csproj",
+        "projectUniqueName": "C:\\Users\\dudas\\projetos\\DojoCSharp\\Dojo.WebApp\\Dojo.WebApp.csproj",
         "projectName": "Dojo.WebApp",
-        "projectPath": "C:\\Users\\mariaes.SOLAR\\projetos\\dojo\\Dojo.WebApp\\Dojo.WebApp.csproj",
-        "packagesPath": "C:\\Users\\mariaes.SOLAR\\.nuget\\packages\\",
-        "outputPath": "C:\\Users\\mariaes.SOLAR\\projetos\\dojo\\Dojo.WebApp\\obj\\",
+        "projectPath": "C:\\Users\\dudas\\projetos\\DojoCSharp\\Dojo.WebApp\\Dojo.WebApp.csproj",
+        "packagesPath": "C:\\Users\\dudas\\.nuget\\packages\\",
+        "outputPath": "C:\\Users\\dudas\\projetos\\DojoCSharp\\Dojo.WebApp\\obj\\",
         "projectStyle": "PackageReference",
         "configFilePaths": [
-          "C:\\Users\\mariaes.SOLAR\\AppData\\Roaming\\NuGet\\NuGet.Config"
+          "C:\\Users\\dudas\\AppData\\Roaming\\NuGet\\NuGet.Config"
         ],
         "originalTargetFrameworks": [
           "net6.0"
@@ -54,6 +54,24 @@
           ],
           "assetTargetFallback": true,
           "warn": true,
+          "downloadDependencies": [
+            {
+              "name": "Microsoft.AspNetCore.App.Ref",
+              "version": "[6.0.25, 6.0.25]"
+            },
+            {
+              "name": "Microsoft.NETCore.App.Host.win-x64",
+              "version": "[6.0.25, 6.0.25]"
+            },
+            {
+              "name": "Microsoft.NETCore.App.Ref",
+              "version": "[6.0.25, 6.0.25]"
+            },
+            {
+              "name": "Microsoft.WindowsDesktop.App.Ref",
+              "version": "[6.0.25, 6.0.25]"
+            }
+          ],
           "frameworkReferences": {
             "Microsoft.AspNetCore.App": {
               "privateAssets": "none"
@@ -62,7 +80,7 @@
               "privateAssets": "all"
             }
           },
-          "runtimeIdentifierGraphPath": "C:\\Program Files\\dotnet\\sdk\\6.0.424\\RuntimeIdentifierGraph.json"
+          "runtimeIdentifierGraphPath": "C:\\Program Files\\dotnet\\sdk\\8.0.100\\RuntimeIdentifierGraph.json"
         }
       }
     }
