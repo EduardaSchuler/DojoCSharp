@@ -38,7 +38,7 @@ public class UsuarioService : IUsuarioService
         await _repository.DeleteAsync(id);
     }
 
-    public async Task Update(Usuario usuario)
+    public async Task UpdateAsync(Usuario usuario)
     {
         if(usuario == null)
             throw new ArgumentException("Objeto enviado é nulo.");

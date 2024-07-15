@@ -10,7 +10,7 @@ public interface IUsuarioService
 
     Task AddAsync(Usuario usuario);
 
-    Task Update(Usuario usuario);
+    Task UpdateAsync(Usuario usuario);
 
     Task DeleteAsync(int id);
 }
