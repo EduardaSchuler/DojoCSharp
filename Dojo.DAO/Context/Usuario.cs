@@ -15,5 +15,5 @@ public partial class Usuario
 
     public DateTime DataCadastro { get; set; }
 
-    public byte Ativo { get; set; }
+    public int Ativo { get; set; }
 }

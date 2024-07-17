@@ -1,9 +1,5 @@
-﻿using System.Data.Common;
-using System.Diagnostics;
-using System.Net.Http.Headers;
-using Dojo.DAO.BaseRepository;
-using Dojo.DAO.Context;
-using Microsoft.EntityFrameworkCore.Storage;
+﻿using Dojo.DAO.Context;
+using Dojo.DAO.Repository;
 
 namespace Dojo.BLL;
 

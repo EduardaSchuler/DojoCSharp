@@ -6,7 +6,7 @@ namespace Dojo.DAO.Repository;
 
 public class UsuarioRepository : BaseRepository<Usuario>, IUsuarioRepository
 {
-    public UsuarioRepository(DbContext context) : base(context)
+    public UsuarioRepository(DbdojoContext context) : base(context)
     {
     }
 

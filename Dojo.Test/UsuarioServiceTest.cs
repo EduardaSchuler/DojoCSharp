@@ -1,6 +1,5 @@
-﻿using System.Diagnostics.CodeAnalysis;
-using Dojo.BLL;
-using Dojo.DAO.BaseRepository;
+﻿using Dojo.BLL;
+using Dojo.DAO.Repository;
 using Moq;
 
 namespace Dojo.Test;
