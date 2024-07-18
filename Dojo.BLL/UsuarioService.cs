@@ -14,7 +14,7 @@ public class UsuarioService : IUsuarioService
 
     public async Task AddAsync(Usuario usuario)
     {
-        if(usuario.Id > 0)
+        if(usuario.Id < 0)
             throw new ArgumentException("Id deve ser maior que zero.");
         if(usuario == null)
             throw new ArgumentException("Objeto enviado é nulo.");

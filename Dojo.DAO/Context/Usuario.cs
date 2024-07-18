@@ -1,7 +1,4 @@
-﻿using System;
-using System.Collections.Generic;
-
-namespace Dojo.DAO.Context;
+﻿namespace Dojo.DAO.Context;
 
 public partial class Usuario
 {
@@ -15,5 +12,5 @@ public partial class Usuario
 
     public DateTime DataCadastro { get; set; }
 
-    public int Ativo { get; set; }
+    public byte Ativo { get; set; }
 }
