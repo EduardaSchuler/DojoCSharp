@@ -9,7 +9,6 @@
   <ItemGroup>
     <Folder Include="BaseRepository\" />
     <Folder Include="Model\" />
-    <Folder Include="Repository\" />
   </ItemGroup>
 
   <ItemGroup>
