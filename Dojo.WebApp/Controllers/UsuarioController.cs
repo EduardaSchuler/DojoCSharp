@@ -1,5 +1,5 @@
 ﻿using Dojo.BLL;
-using Dojo.DAO.Context;
+using Dojo.DAO.Dapper.Model;
 using Microsoft.AspNetCore.Mvc;
 
 namespace Dojo.WebApp;
@@ -34,14 +34,14 @@ public class UsuarioController : ControllerBase
     }
 
     [HttpPost]
-    public async Task<IActionResult> Post(Usuario usuario)
+    public async Task<IActionResult> Post(UsuarioDapper usuario)
     {
         await _usuarioService.AddAsync(usuario);
         return CreatedAtAction(nameof(GetById), new {id = usuario.Id}, usuario);
     }
 
     [HttpPut("{id}")]
-    public async Task<IActionResult> Put(int id, Usuario usuario)
+    public async Task<IActionResult> Put(int id, UsuarioDapper usuario)
     {
         if(id != usuario.Id)
             return BadRequest("Usuario solicitado nao encontrado");

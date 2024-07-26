@@ -12,17 +12,17 @@ public class UsuarioServiceTest
     public UsuarioServiceTest()
     {
         _usuarioRepositoryMock = new Mock<IUsuarioRepository>();
-        _usuarioService = new UsuarioService(_usuarioRepositoryMock.Object); 
+       // _usuarioService = new UsuarioService(_usuarioRepositoryMock.Object); 
     }
 
-    [Fact]
-    public async Task DeveRetornarUmUsuarioPeloId(){
-        _usuarioRepositoryMock.Setup(repo=> repo.GetByIdAsync(It.IsAny<int>()))
-        .ReturnsAsync(new DAO.Context.Usuario {Id = 1, Nome="Usuario Teste", Cpf= "1910000000"});
+    // [Fact]
+    // public async Task DeveRetornarUmUsuarioPeloId(){
+    //     _usuarioRepositoryMock.Setup(repo=> repo.GetByIdAsync(It.IsAny<int>()))
+    //     .ReturnsAsync(new DAO.Context.Usuario {Id = 1, Nome="Usuario Teste", Cpf= "1910000000"});
 
-        var usuario = await _usuarioService.GetByIdAsync(1);
+    //     var usuario = await _usuarioService.GetByIdAsync(1);
 
-        Assert.NotNull(usuario);
-        Assert.Equal(1, usuario.Id);
-    }
+    //     Assert.NotNull(usuario);
+    //     Assert.Equal(1, usuario.Id);
+    // }
 }

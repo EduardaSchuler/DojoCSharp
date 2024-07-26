@@ -1,18 +1,18 @@
-﻿using Dojo.DAO.Context;
-using Dojo.DAO.Repository;
+﻿using Dojo.DAO.Dapper.Model;
+using Dojo.DAO.Dapper.Repository;
 
 namespace Dojo.BLL;
 
 public class UsuarioService : IUsuarioService
 {
-    private readonly IUsuarioRepository _repository;
+    private readonly IUsuarioRepositoryDapper _repository;
 
     //injeção de dependencia
-    public UsuarioService(IUsuarioRepository usuarioRepository){
+    public UsuarioService(IUsuarioRepositoryDapper usuarioRepository){
         this._repository = usuarioRepository;
     }
 
-    public async Task AddAsync(Usuario usuario)
+    public async Task AddAsync(UsuarioDapper usuario)
     {
         if(usuario.Id < 0)
             throw new ArgumentException("Id deve ser maior que zero.");
@@ -23,7 +23,7 @@ public class UsuarioService : IUsuarioService
         if (string.IsNullOrEmpty(usuario.Cpf))
             throw new ArgumentException("Campo cpf está em branco.");
 
-        await _repository.AddAsync(usuario);
+        await _repository.Add(usuario);
     }
 
     public async Task DeleteAsync(int id)
@@ -31,10 +31,10 @@ public class UsuarioService : IUsuarioService
         if(id == 0)
             throw new ArgumentException("O id não pode ser zero.");
 
-        await _repository.DeleteAsync(id);
+        await _repository.Delete(id);
     }
 
-    public async Task UpdateAsync(Usuario usuario)
+    public async Task UpdateAsync(UsuarioDapper usuario)
     {
         if(usuario == null)
             throw new ArgumentException("Objeto enviado é nulo.");
@@ -43,21 +43,19 @@ public class UsuarioService : IUsuarioService
         if (string.IsNullOrEmpty(usuario.Cpf))
             throw new ArgumentException("Campo cpf está em branco.");
 
-        await _repository.UpdateAsync(usuario);
-
-        throw new ArgumentException("Usuario informado não encontrado");
+        await _repository.Update(usuario);
     }
 
-        public async Task<IEnumerable<Usuario>> getAllAsync()
+        public async Task<IEnumerable<UsuarioDapper>> getAllAsync()
     {
-        return await _repository.GetAllAsync();
+        return await _repository.GetAll();
     }
 
-    public async Task<Usuario> GetByIdAsync(int id)
+    public async Task<UsuarioDapper?> GetByIdAsync(int id)
     {
         if(id == 0)
             throw new ArgumentException("O id não pode ser zero.");
 
-        return await _repository.GetByIdAsync(id);
+        return await _repository.GetById(id);
     }
 }

@@ -1,6 +1,9 @@
 using Dojo.DAO.Context;
 using Dojo.DAO.Repository;
+using Dojo.DAO.Dapper.Repository;
 using Dojo.BLL;
+using System.Data;
+using System.Data.SqlClient;
 using Microsoft.EntityFrameworkCore;
 
 var builder = WebApplication.CreateBuilder(args);
@@ -24,7 +27,11 @@ builder.Services.AddControllers();
 builder.Services.AddEndpointsApiExplorer();
 builder.Services.AddSwaggerGen();
 
+builder.Services.AddScoped<IDbConnection>(db => 
+	new SqlConnection(builder.Configuration.GetConnectionString("DefaultConnection")));
+
 builder.Services.AddScoped<IUsuarioRepository, UsuarioRepository>();
+builder.Services.AddScoped<IUsuarioRepositoryDapper, UsuarioRepositoryDapper>();
 builder.Services.AddScoped<IUsuarioService, UsuarioService>();
 
 var app = builder.Build();

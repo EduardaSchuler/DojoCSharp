@@ -1,16 +1,16 @@
-﻿using Dojo.DAO.Context;
+﻿using Dojo.DAO.Dapper.Model;
 
 namespace Dojo.BLL;
 
 public interface IUsuarioService 
 {
-    Task<Usuario> GetByIdAsync(int id);
+    Task<UsuarioDapper?> GetByIdAsync(int id);
 
-    Task<IEnumerable<Usuario>> getAllAsync();
+    Task<IEnumerable<UsuarioDapper>> getAllAsync();
 
-    Task AddAsync(Usuario usuario);
+    Task AddAsync(UsuarioDapper usuario);
 
-    Task UpdateAsync(Usuario usuario);
+    Task UpdateAsync(UsuarioDapper usuario);
 
     Task DeleteAsync(int id);
 }

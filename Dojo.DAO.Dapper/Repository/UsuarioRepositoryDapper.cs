@@ -15,6 +15,7 @@ public class UsuarioRepositoryDapper : BaseRepositoryDapper<UsuarioDapper>, IUsu
     public async Task<IEnumerable<UsuarioDapper>> GetAll()
     {
         const string selectQuery = @"SELECT
+                                        ID,
                                         NOME, 
                                         CPF, 
                                         EMAIL, 
@@ -29,6 +30,7 @@ public class UsuarioRepositoryDapper : BaseRepositoryDapper<UsuarioDapper>, IUsu
     public async Task<UsuarioDapper?> GetById(int id)
     {
         const string selectQuery = @"SELECT
+                                        ID,
                                         NOME, 
                                         CPF, 
                                         EMAIL, 

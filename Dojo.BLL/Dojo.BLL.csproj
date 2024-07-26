@@ -2,6 +2,7 @@
 
   <ItemGroup>
     <ProjectReference Include="..\Dojo.DAO\Dojo.DAO.csproj" />
+    <ProjectReference Include="..\Dojo.DAO.Dapper\Dojo.DAO.Dapper.csproj" />
   </ItemGroup>
 
   <PropertyGroup>
