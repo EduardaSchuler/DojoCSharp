@@ -13,43 +13,39 @@ public class BaseRepositoryDapper<T> : IBaseRepositoryDapper<T> where T : class
         _connection = connection;
     }
 
-    public async Task<IEnumerable<T>> GetAll(string selectQuery)
+    public async Task<IEnumerable<T>> ListaTodos(string selectQuery)
     {
-        using IDbConnection dbConnection = _connection;
-        dbConnection.Open();
-
-        return await dbConnection.QueryAsync<T>(selectQuery);
+        return await _connection.QueryAsync<T>(selectQuery);
     }
 
-    public async Task<T?> GetById(int id, string selectQuery)
+    public async Task<T?> ObtemPorId(int id, string selectQuery)
     {
-        using IDbConnection dbConnection = _connection;
-        dbConnection.Open();
-
-        return await dbConnection.QueryFirstOrDefaultAsync<T>(selectQuery, new { Id = id });
+        return await _connection.QueryFirstOrDefaultAsync<T>(selectQuery, new { Id = id });
     }
 
-    public async Task Add(DynamicParameters parameters, string inserQuery)
+    public async Task Adiciona(DynamicParameters parameters, string inserQuery)
     {
-        using IDbConnection dbConnection = _connection;
-        dbConnection.Open();
-
-        await dbConnection.ExecuteAsync(inserQuery, parameters);
+        await _connection.ExecuteAsync(inserQuery, parameters);
     }
 
-    public async Task Update(T entity, string updateQuery)
+        public async Task AdicionaEmLote(IEnumerable<T> TListEntity, string insertQuery)
     {
-        using IDbConnection dbConnection = _connection;
-        dbConnection.Open();
-
-        await dbConnection.ExecuteAsync(updateQuery, entity);
+        await _connection.ExecuteAsync(insertQuery, TListEntity);
     }
 
-        public async Task Delete(int id, string deleteQuery)
+    public async Task<int> AdicionaERetornaId(DynamicParameters parameters, string insertQuery)
     {
-        using IDbConnection dbConnection = _connection;
-        dbConnection.Open();
-
-        await dbConnection.ExecuteAsync(deleteQuery, new { id = id });
+        return await _connection.ExecuteScalarAsync<int>(insertQuery, parameters);
     }
+
+    public async Task Atualiza(DynamicParameters parameters, string updateQuery)
+    {
+        await _connection.ExecuteAsync(updateQuery, parameters);
+    }
+
+        public async Task Deleta(int id, string deleteQuery)
+    {
+        await _connection.ExecuteAsync(deleteQuery, new { id = id });
+    }
+
 }

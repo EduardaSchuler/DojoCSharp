@@ -1,12 +1,12 @@
-﻿using Dojo.DAO.Dapper.Model;
+using Dojo.DAO.Dapper.Model;
 
-namespace Dojo.BLL;
+namespace Dojo.DAO.Dapper.Repository.Contratos;
 
-public interface IUsuarioService 
+public interface IUsuarioRepositoryDapper
 {
-    Task<UsuarioDapper?> ObtemUsuarioPorId(int id);
-
     Task<IEnumerable<UsuarioDapper>> ListaUsuarios();
+
+    Task<UsuarioDapper?> ObtemUsuarioPorId(int id);
 
     Task AdicionaUsuario(UsuarioDapper usuario);
 

@@ -4,13 +4,17 @@ namespace Dojo.DAO.Dapper.BaseRepository;
 
 public interface IBaseRepositoryDapper<T> where T : class
 {
-    Task<IEnumerable<T>> GetAll(string selectQuery);
+    Task<IEnumerable<T>> ListaTodos(string selectQuery);
 
-    Task<T?> GetById(int id, string selectQuery);
+    Task<T?> ObtemPorId(int id, string selectQuery);
 
-    Task Add (DynamicParameters parameters, string inserQuery);
+    Task Adiciona(DynamicParameters parameters, string inserQuery);
 
-    Task Update(T entity, string updateQuery);
+    Task AdicionaEmLote(IEnumerable<T> TListEntity, string insertQuery);
 
-    Task Delete(int id, string deleteQuery);
+    Task<int> AdicionaERetornaId(DynamicParameters parameters, string insertQuery);
+
+    Task Atualiza(DynamicParameters parameters, string updateQuery);
+
+    Task Deleta(int id, string deleteQuery);
 }

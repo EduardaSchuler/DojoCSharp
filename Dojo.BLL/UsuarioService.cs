@@ -1,5 +1,5 @@
 ﻿using Dojo.DAO.Dapper.Model;
-using Dojo.DAO.Dapper.Repository;
+using Dojo.DAO.Dapper.Repository.Contratos;
 
 namespace Dojo.BLL;
 
@@ -12,7 +12,7 @@ public class UsuarioService : IUsuarioService
         this._repository = usuarioRepository;
     }
 
-    public async Task AddAsync(UsuarioDapper usuario)
+    public async Task AdicionaUsuario(UsuarioDapper usuario)
     {
         if(usuario.Id < 0)
             throw new ArgumentException("Id deve ser maior que zero.");
@@ -23,18 +23,18 @@ public class UsuarioService : IUsuarioService
         if (string.IsNullOrEmpty(usuario.Cpf))
             throw new ArgumentException("Campo cpf está em branco.");
 
-        await _repository.Add(usuario);
+        await _repository.AdicionaUsuario(usuario);
     }
 
-    public async Task DeleteAsync(int id)
+    public async Task DeletaUsuario(int id)
     {
         if(id == 0)
             throw new ArgumentException("O id não pode ser zero.");
 
-        await _repository.Delete(id);
+        await _repository.DeletaUsuario(id);
     }
 
-    public async Task UpdateAsync(UsuarioDapper usuario)
+    public async Task AtualizaUsuario(UsuarioDapper usuario)
     {
         if(usuario == null)
             throw new ArgumentException("Objeto enviado é nulo.");
@@ -43,19 +43,19 @@ public class UsuarioService : IUsuarioService
         if (string.IsNullOrEmpty(usuario.Cpf))
             throw new ArgumentException("Campo cpf está em branco.");
 
-        await _repository.Update(usuario);
+        await _repository.AtualizaUsuario(usuario);
     }
 
-        public async Task<IEnumerable<UsuarioDapper>> getAllAsync()
+        public async Task<IEnumerable<UsuarioDapper>> ListaUsuarios()
     {
-        return await _repository.GetAll();
+        return await _repository.ListaUsuarios();
     }
 
-    public async Task<UsuarioDapper?> GetByIdAsync(int id)
+    public async Task<UsuarioDapper?> ObtemUsuarioPorId(int id)
     {
         if(id == 0)
             throw new ArgumentException("O id não pode ser zero.");
 
-        return await _repository.GetById(id);
+        return await _repository.ObtemUsuarioPorId(id);
     }
 }

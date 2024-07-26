@@ -1,6 +1,6 @@
 using Dojo.DAO.Context;
 using Dojo.DAO.Repository;
-using Dojo.DAO.Dapper.Repository;
+using Dojo.DAO.Dapper.Repository.Contratos;
 using Dojo.BLL;
 using System.Data;
 using System.Data.SqlClient;

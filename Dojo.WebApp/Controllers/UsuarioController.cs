@@ -18,14 +18,14 @@ public class UsuarioController : ControllerBase
     [HttpGet]
     public async Task<IActionResult> GetAll()
     {
-        var usuarios = await _usuarioService.getAllAsync();
+        var usuarios = await _usuarioService.ListaUsuarios();
         return Ok(usuarios);
     }
 
     [HttpGet("{id}")]
     public async Task<IActionResult> GetById(int id)
     {
-        var usuario = await _usuarioService.GetByIdAsync(id);
+        var usuario = await _usuarioService.ObtemUsuarioPorId(id);
 
         if (usuario == null)
             return NotFound();
@@ -36,7 +36,7 @@ public class UsuarioController : ControllerBase
     [HttpPost]
     public async Task<IActionResult> Post(UsuarioDapper usuario)
     {
-        await _usuarioService.AddAsync(usuario);
+        await _usuarioService.AdicionaUsuario(usuario);
         return CreatedAtAction(nameof(GetById), new {id = usuario.Id}, usuario);
     }
 
@@ -46,7 +46,7 @@ public class UsuarioController : ControllerBase
         if(id != usuario.Id)
             return BadRequest("Usuario solicitado nao encontrado");
         
-        await _usuarioService.UpdateAsync(usuario);
+        await _usuarioService.AtualizaUsuario(usuario);
 
         return NoContent();
     }
@@ -54,7 +54,7 @@ public class UsuarioController : ControllerBase
     [HttpDelete("{id}")]
     public async Task<IActionResult> Delete(int id)
     {
-        await _usuarioService.DeleteAsync(id);
+        await _usuarioService.DeletaUsuario(id);
         return NoContent();
     }
 }
